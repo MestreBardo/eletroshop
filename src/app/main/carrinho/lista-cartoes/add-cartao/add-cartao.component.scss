@@ -1,0 +1,18 @@
+.cartao {
+  width: 80%;
+  height: 200px;
+  border-radius: 3px;
+  position: relative;
+}
+
+
+//Media query para utilização mobile
+@media screen and (max-width: 768px) {
+  .cartao {
+    width: 95%;
+    height: 150px;
+    border-radius: 3px;
+    position: relative;
+  }
+
+}

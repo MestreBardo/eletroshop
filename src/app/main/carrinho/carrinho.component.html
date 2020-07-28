@@ -1,0 +1,9 @@
+<div class="d-flex flex-column justify-content-between h-100" >
+  <ng-container [ngSwitch]="estado">
+    <app-lista-carrinho (fechar)="closed.emit(true)" (avancar)="avancaEtapa()" *ngSwitchCase="'carrinho'" class="h-100" [pokemonsCarrinho]="pokemonsCarrinho" [valorCarrinho]="valorCarrinho"></app-lista-carrinho>
+    <app-lista-cartoes  (retornar)="retornarEtapa()" (avancar)="avancaEtapa($event)" *ngSwitchCase="'cartoes'" class="h-100"></app-lista-cartoes>
+    <app-resumo [cartao]="cartaoAUtilizar" (retornar)="retornarEtapa()" (avancar)="finalizarCompra()" *ngSwitchCase="'resumo'" class="h-100"></app-resumo>
+  </ng-container>
+
+</div>
+

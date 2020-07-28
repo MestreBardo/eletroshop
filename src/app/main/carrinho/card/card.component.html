@@ -1,0 +1,39 @@
+<div class="one-edge-shadow bg-white shadow-sm mb-1" style="overflow: hidden;">
+
+    <div *ngIf="pokemon" class="d-flex align-items-center">
+        <img *ngIf="pokemon.imagemCarrinho" class="img-fluid" [src]="pokemon.imagemCarrinho" alt="">
+        <div class="d-flex align-items-center justify-content-center" style="height: 96px; width: 96px;" *ngIf="!pokemon.imagemCarrinho">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="60" height="60"
+                viewBox="0 0 172 172"
+                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f36f21"><path d="M14.55029,12.32471l-7.60059,7.60059l139.75,139.75l7.60058,-7.60058l-12.32471,-12.32471h13.89942v-107.5h-121.39941zM45.22559,43h99.89941v67.64942l-32.25,-32.25l-16.125,16.125zM16.125,44.25977v95.49023h95.49023l-10.75,-10.75h-23.38965l11.69483,-11.69482l-7.60059,-7.60059l-6.31982,6.31983l-26.875,-26.875l-21.5,21.5v-55.63965zM126.3125,53.75c-4.4528,0 -8.0625,3.6097 -8.0625,8.0625c0,4.4528 3.6097,8.0625 8.0625,8.0625c4.4528,0 8.0625,-3.6097 8.0625,-8.0625c0,-4.4528 -3.6097,-8.0625 -8.0625,-8.0625zM112.875,93.60058l32.25,32.25v3.14942h-13.89942l-26.875,-26.875zM48.375,104.35058l19.27442,19.27442l-5.375,5.375h-35.39942v-3.14942z"></path></g></g></svg>
+        </div>
+        <div class="d-flex flex-column">
+            <h4 class="text-dark m-0">{{pokemon.nome}}</h4>
+            <div class="d-flex align-items-center">
+                <p class="m-0 text-primary mt-1 w-100">R$ {{pokemon.valor}},00</p>
+                <div class="d-flex ml-auto  border border-secondary border-top-0 border-left-0 border-right-0 ml-auto">
+                    <button [disabled]="quantidadeAtual < 2" (click)="mudaQuantidade('negativo')" class="btn text-primary d-flex align-items-center bg-white p-2 "> 
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            width="15" height="15"
+                            viewBox="0 0 172 172"
+                            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f36f21"><path d="M26.875,80.625v10.75h118.25v-10.75z"></path></g></g></svg> </button>
+                    <input (change)="verificaMudanca($event)" (input)="mudarQuantidade($event)" [(ngModel)]="quantidadeAtual" type="number" class="form-control text-center form-control-sm w-50 ">
+                    <button (click)="mudaQuantidade('positivo')" class="btn text-primary bg-white p-2 d-flex align-items-center"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            width="15" height="15"
+                            viewBox="0 0 172 172"
+                            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f36f21"><path d="M80.625,26.875v53.75h-53.75v10.75h53.75v53.75h10.75v-53.75h53.75v-10.75h-53.75v-53.75z"></path></g></g></svg> </button>
+                </div>
+            </div>
+            
+        </div>
+        <div (click)="deletaPokemon()" class="d-flex flex-column ml-auto p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="32" height="32"
+                viewBox="0 0 172 172"
+                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f36f21"><path d="M80.625,21.5c-2.81347,0 -5.68994,0.98682 -7.72656,3.02344c-2.03662,2.03662 -3.02344,4.91309 -3.02344,7.72656v5.375h-32.25v10.75h5.375v86c0,8.83935 7.28565,16.125 16.125,16.125h64.5c8.83935,0 16.125,-7.28565 16.125,-16.125v-86h5.375v-10.75h-32.25v-5.375c0,-2.81347 -0.98682,-5.68994 -3.02344,-7.72656c-2.03662,-2.03662 -4.91308,-3.02344 -7.72656,-3.02344zM80.625,32.25h21.5v5.375h-21.5zM53.75,48.375h75.25v86c0,2.98145 -2.39355,5.375 -5.375,5.375h-64.5c-2.98144,0 -5.375,-2.39355 -5.375,-5.375zM64.5,64.5v59.125h10.75v-59.125zM86,64.5v59.125h10.75v-59.125zM107.5,64.5v59.125h10.75v-59.125z"></path></g></g></svg>
+        </div>
+    </div>
+    
+</div>

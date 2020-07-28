@@ -1,0 +1,83 @@
+
+#header-sticky-top {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+}
+
+#Carrinho {
+  position: fixed;
+  z-index: 3;
+  right: 0;
+  top: 0;
+}
+
+#botao-carrinho {
+  z-index: 3;
+}
+
+
+//Media query para utilização mobile
+@media screen and (max-width: 768px) {
+  
+  .icon-shop-open {
+    right: 90%;
+    transition: all .3s ease-in-out;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .open {
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    transition: all .3s ease-in-out;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .open {
+    background: rgba(0, 0, 0, 0.75);
+    width: 70%;
+    opacity: 1;
+    transition: all .3s ease-in-out;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {.open {
+  background: rgba(0, 0, 0, 0.75);
+  width: 50%;
+  transition: all .3s ease-in-out;
+}}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .open {
+  background: rgba(0, 0, 0, 0.75);
+  width: 40%;
+  transition: all .3s ease-in-out;
+}}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {.open {
+  background: rgba(0, 0, 0, 0.75);
+  width: 35%;
+  transition: all .3s ease-out;
+}}
+
+
+.closed {
+  width: 0%;
+  opacity: 0;
+  transition: all .3s ease-out;
+}
+
+.icon-shop-close {
+  right: 0%;
+  transition: all .3s ease-in-out;
+}
+
+
+

@@ -1,0 +1,43 @@
+<div class="container-flud mt-2">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-secondary m-0">Pokemons</h3>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12 d-flex mb-2">
+            <div style="cursor: pointer;"
+                (click)="escolherAba(i)"
+                *ngFor="let menu of menuItens; let i = index"
+                [ngClass]="{'bg-secondary': !menu.ativo, 'bg-primary': menu.ativo}"
+                class="bg-secondary p-1 px-2 text-white mr-1">
+                {{menu.nomeMenu |titlecase}}
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="input-group bg-light py-2 mb-2">
+
+          <input [(ngModel)]="valorBusca" type="text" style="z-index: 0" class="form-control bg-white border border-primary border-right-0"  placeholder="Ache seus Pokemons">
+          <div class="input-group-append d-flex align-items-center bg-white border-left-0">
+            <button class="input-group-text px-2 d-flex align-items-center btn bg-white border border-primary border-left-0">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="20" height="20"
+                viewBox="0 0 172 172"
+                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#e67e22"><path d="M102.125,16.125c-29.62549,0 -53.75,24.12451 -53.75,53.75c0,12.8706 4.51416,24.67041 12.09375,33.92969l-42.83203,42.83203l7.72656,7.72656l42.83203,-42.83203c9.25928,7.57959 21.05908,12.09375 33.92969,12.09375c29.62549,0 53.75,-24.12451 53.75,-53.75c0,-29.62549 -24.12451,-53.75 -53.75,-53.75zM102.125,26.875c23.80957,0 43,19.19043 43,43c0,23.80957 -19.19043,43 -43,43c-23.80957,0 -43,-19.19043 -43,-43c0,-23.80957 19.19043,-43 43,-43z"></path></g></g></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+        <div [@CardState] *ngFor="let pokemon of pokemonsSearched | pokemonFilter:valorBusca:'nome'" class="col-6 col-md-4 col-lg-3">
+            <app-showcase-card  [pokemon]="pokemon"></app-showcase-card>
+        </div>
+    </div>
+</div>
+<div class="mt-5 d-block d-md-none"></div>

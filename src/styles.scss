@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans&family=MuseoModerno&display=swap');
+
+
+h1, h2, h3, h4, h5{
+  font-family: 'Bebas Neue', cursive;
+  white-space: nowrap
+}
+p, span, small {
+  font-family: 'MuseoModerno', cursive;
+  white-space: nowrap
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+
+//Modificação do botão original do Bootstrap para adequação do projeto.
+.btn-primary {
+  box-shadow: 0 3px #cf4e04;
+  border: none !important;
+  backface-visibility: hidden;
+}
+.btn-primary:active{
+  transform: translateY(2px);
+  backface-visibility: hidden;
+  box-shadow: 0 1px #8f3502;
+}
+
+.btn-secondary {
+  box-shadow: 0 3px #7c7c7c;
+  border: none !important;
+  backface-visibility: hidden;
+}
+.btn-secondary:active{
+  transform: translateY(2px);
+  backface-visibility: hidden;
+  box-shadow: 0 1px #727272;
+}
+
+//Overlay para foco em determinado objeto.
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  transition: all .3s ease-in-out;
+
+}
+
+.one-edge-shadow {
+  box-shadow: 0 8px 6px -6px rgb(187, 187, 187);
+}
+
+
+.second-modal-backdrop
+{
+  background-color: rgba(0, 0, 0, 0.5)!important;
+  margin: 0 !important;
+  min-height: 100% !important;
+  max-width: 100% !important;
+  display: flex!important;
+  justify-content: center!important;
+
+  .modal-content {
+    display: flex !important;
+    align-self: center !important;
+  }
+}
+
+@for $y from 300 through 1200 {
+  /* -------- font -------- */
+  .modal-width-#{$y} {
+    .modal-content {
+      max-width: #{$y}px !important;
+    }
+  }
+}
+

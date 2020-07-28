@@ -1,0 +1,129 @@
+
+<div class="modal-body bg-light">
+    
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6" style="overflow: hidden;">
+                <div class="d-flex justify-content-center">
+                    <img *ngIf="imageUrl !== ''" class="img-fluid" style="max-height: 400px;" [src]="imageUrl" onerror="this.src = '../../../../assets/pics/semImagem.png'">
+                    <img *ngIf="imageUrl === ''"    src='../../../../../assets/pics/Loader.svg'>
+            
+                </div>
+            </div>
+            <hr class="w-100 d-block d-md-none my-1">
+            <div *ngIf="pokemon" class="col-12 col-md-6 d-flex flex-column positio-relative">
+                <div  style="position: absolute; top: 0; right: 0; z-index: 999999999;">
+                    <button (click)="bsModalRef.hide()" class="btn bg-light">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            width="32" height="32"
+                            viewBox="0 0 172 172"
+                            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f36f21"><path d="M46.86328,39.13672l-7.72656,7.72656l39.13672,39.13672l-39.13672,39.13672l7.72656,7.72656l39.13672,-39.13672l39.13672,39.13672l7.72656,-7.72656l-39.13672,-39.13672l39.13672,-39.13672l-7.72656,-7.72656l-39.13672,39.13672z"></path></g></g></svg>
+                    </button>
+                </div>
+                <h3 class="mb-1">{{pokemon.name | titlecase}}</h3>
+                <h5 class="text-primary">R$ {{pokemon.base_experience * 2}},00</h5>
+                <div class="container-fluid bg-primary py-2">
+                    <div class="row">
+                        <div class="col-6">
+                            <small class="text-white">
+                                Peso
+                            </small>
+                            <h5 class="text-white">{{pokemon.weight}} KG</h5>
+                        </div>
+                        <div class="col-6">
+                            <small class="text-white">
+                                Altura
+                            </small>
+                            <h5 class="text-white">{{pokemon.height}} M</h5>
+                        </div>
+                        <div *ngIf="pokemon.abilities" class="col-6">
+                            <small class="text-white">
+                                Habilidade
+                            </small>
+                            <h5 class="text-white">{{pokemon.abilities[0].ability.name | titlecase}}</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid bg-light py-2">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center mb-1">
+                            <h6 class="text-secondary ">Status</h6>
+                        </div>
+                        <div class="col-6 col-md-4 d-flex justify-content-center">
+                            <h6 class="text-primary d-flex align-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                    width="20" height="20"
+                                    viewBox="0 0 172 172"
+                                    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f36f21"><path d="M51.0625,26.875c-22.24077,0 -40.3125,18.29393 -40.3125,40.3125c0,7.67729 3.50339,14.26222 6.72925,19.07495c3.22585,4.81273 6.51929,8.04151 6.51929,8.04151l62.00146,62.01196l62.00146,-62.01196c0,0 13.24854,-11.7581 13.24854,-27.11646c0,-22.01857 -18.07173,-40.3125 -40.3125,-40.3125c-18.44718,0 -30.33943,11.0729 -34.9375,15.75757c-4.59807,-4.68467 -16.49032,-15.75757 -34.9375,-15.75757zM51.0625,37.625c16.05229,0 30.93774,15.68408 30.93774,15.68408l3.99976,4.47217l3.99976,-4.47217c0,0 14.88546,-15.68408 30.93774,-15.68408c16.35173,0 29.5625,13.41857 29.5625,29.5625c0,8.3024 -10.04663,19.46338 -10.04663,19.46338l-0.0105,0.0105l-54.44287,54.44287l-54.44287,-54.44287l-0.0105,-0.0105c0,0 -2.53559,-2.49636 -5.13354,-6.37232c-2.59798,-3.87571 -4.91309,-8.94335 -4.91309,-13.09107c0,-16.14393 13.21077,-29.5625 29.5625,-29.5625zM112.875,53.75v10.75h-10.75v10.75h10.75v10.75h10.75v-10.75h10.75v-10.75h-10.75v-10.75z"></path></g></g></svg>
+                                <span class="ml-2">{{pokemon.stats[0].base_stat}}</span>
+                            </h6>
+                        </div>
+                        <div class="col-6 col-md-4 d-flex justify-content-center">
+                            <h6 class="text-primary d-flex align-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                    width="20" height="20"
+                                    viewBox="0 0 172 172"
+                                    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f36f21"><path d="M151.50781,20.49219l-7.22266,1.00781l-28.38672,4.19922l-2.18359,0.16797l-1.34375,1.67969l-56.60547,68.02734l-8.0625,-8.0625l-7.55859,7.72656l8.73438,8.73438l-14.27734,16.79688l-3.86328,-3.86328l-7.72656,7.55859l24.52344,24.52344l7.55859,-7.72656l-3.86328,-3.86328l16.79688,-14.27734l8.73438,8.73438l7.72656,-7.55859l-8.0625,-8.0625l68.02734,-56.60547l1.67969,-1.34375l0.16797,-2.18359l4.19922,-28.38672zM138.74219,33.25781l-2.6875,19.31641l-67.35547,55.93359l-5.20703,-5.20703l55.93359,-67.35547zM56.60547,111.53125l3.86328,3.86328l-16.96484,14.27734l-1.17578,-1.17578z"></path></g></g></svg>
+                                <span class="ml-2">{{pokemon.stats[1].base_stat}}</span>
+                            </h6>
+                        </div>
+                        <div class="col-6 col-md-4 d-flex justify-content-center">
+                            <h6 class="text-primary d-flex align-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                    width="20" height="20"
+                                    viewBox="0 0 172 172"
+                                    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f36f21"><path d="M86,21.5c-12.09375,0 -20.24023,4.76611 -27.54687,8.73438c-7.30664,3.96826 -13.94141,7.39063 -26.20312,7.39063h-5.375v5.375c0,41.48828 14.02539,68.48926 28.21875,84.82422c14.19336,16.33496 28.89063,22.33984 28.89063,22.33984l2.01563,0.67188l2.01563,-0.67187c0,0 14.69727,-5.87891 28.89063,-22.17187c14.19336,-16.29297 28.21875,-43.35693 28.21875,-84.99219v-5.375h-5.375c-12.19873,0 -18.89648,-3.42236 -26.20312,-7.39062c-7.30664,-3.96826 -15.45312,-8.73437 -27.54687,-8.73437zM86,32.25c9.40625,0 14.80224,3.29639 22.33984,7.39063c6.36182,3.46435 14.80224,6.78174 25.69922,7.89453c-1.02881,36.36523 -13.05957,59.48193 -25.19531,73.40234c-11.00195,12.61865 -20.24023,16.81787 -22.84375,17.97266c-2.62451,-1.17578 -11.8418,-5.47998 -22.84375,-18.14062c-12.13574,-13.9624 -24.16651,-37.03711 -25.19531,-73.23437c10.93896,-1.11279 19.3374,-4.43018 25.69922,-7.89453c7.5376,-4.09424 12.93359,-7.39062 22.33984,-7.39062z"></path></g></g></svg>
+                                <span class="ml-2">{{pokemon.stats[2].base_stat}}</span>
+                            </h6>
+                        </div>
+                        <div class="col-6 col-md-4 d-flex justify-content-center">
+                                <h6 class="text-primary d-flex align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                        width="20" height="20"
+                                        viewBox="0 0 172 172"
+                                        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f36f21"><path d="M112.20313,13.77344l-3.69531,4.03125l-9.07031,9.57422h-19.31641v18.8125l-9.23828,9.74219l-3.69531,3.86328l11.75781,11.75781l-62.65234,62.82031l-3.86328,3.86328l3.86328,3.69531l17.63672,17.63672l3.69531,-3.86328l62.82031,-62.65234l11.75781,11.75781l3.86328,-3.69531l9.74219,-9.23828h18.8125v-19.31641l9.57422,-9.07031l4.03125,-3.69531l-13.60547,-13.60547v-18.8125h-18.8125zM112.37109,29.22656l7.39063,7.39063l1.67969,1.51172h12.42969v12.42969l1.51172,1.67969l7.39063,7.39063l-7.22266,6.88672l-1.67969,1.51172v13.10156h-12.42969l-1.51172,1.51172l-7.55859,7.22266l-4.36719,-4.36719l24.35547,-24.35547l-21.33203,-21.33203l-3.86328,3.69531l-20.49219,20.66016l-4.53516,-4.53516l7.22266,-7.55859l1.51172,-1.51172v-12.42969h13.10156l1.51172,-1.67969zM111.02734,54.92578l6.04688,6.21484l-83.14453,83.3125l-6.21484,-6.21484zM102.125,112.875v5.375h-5.375v10.75h5.375v5.375h10.75v-5.375h5.375v-10.75h-5.375v-5.375zM134.375,123.625v10.75h-10.75v10.75h10.75v10.75h10.75v-10.75h10.75v-10.75h-10.75v-10.75z"></path></g></g></svg>
+                                    <span class="ml-2">{{pokemon.stats[3].base_stat}}</span>
+                                </h6>
+                            </div>
+                            <div class="col-6 col-md-4 d-flex justify-content-center">
+                                    <h6 class="text-primary d-flex align-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                            width="20" height="20"
+                                            viewBox="0 0 172 172"
+                                            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f36f21"><path d="M86,21.30054c-12.09375,0 -20.19658,4.74502 -27.49438,8.71338c-7.29781,3.96835 -13.99185,7.41162 -26.25562,7.41162h-5.375v5.375c0,41.48347 14.00191,68.47162 28.19776,84.80322c14.19584,16.3316 28.92212,22.30835 28.92212,22.30835l1.99463,0.79785l1.98413,-0.78735c0,0 14.75176,-5.90462 28.95361,-22.20337c14.20185,-16.29875 28.19776,-43.28917 28.19776,-84.9187v-5.375h-5.375c-12.19692,0 -18.8973,-3.44147 -26.21362,-7.41162c-7.31632,-3.97015 -15.44263,-8.71338 -27.53638,-8.71338zM86,32.05054c9.40625,0 14.87181,3.31927 22.41333,7.41162c6.35398,3.44794 14.73395,6.7025 25.59424,7.82104c-1.01448,36.38719 -13.04403,59.43747 -25.18482,73.37085c-11.02928,12.65775 -20.24418,17.04192 -22.81226,18.18261c-2.57465,-1.15806 -11.80181,-5.59647 -22.83325,-18.2876c-12.14456,-13.97171 -24.15644,-37.02484 -25.17432,-73.26587c10.89684,-1.11831 19.29215,-4.3818 25.63623,-7.83154c7.52913,-4.09415 12.95459,-7.40112 22.36084,-7.40112zM86,53.75l-7.33813,16.75489l-18.43457,1.96313l13.25903,11.7998l-3.62183,18.25611l16.1355,-9.31177l16.1355,9.31177l-3.62183,-18.25611l13.25903,-11.7998l-18.43457,-1.96313z"></path></g></g></svg>
+                                        <span class="ml-2">{{pokemon.stats[4].base_stat}}</span>
+                                    </h6>
+                                </div>
+                                <div class="col-6 col-md-4 d-flex justify-content-center">
+                            <h6 class="text-primary d-flex align-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                    width="20" height="20"
+                                    viewBox="0 0 172 172"
+                                    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f36f21"><path d="M85.9895,32.25c-6.57744,0 -12.92595,1.06957 -18.14062,4.48267c-3.8151,2.49705 -6.14889,6.78551 -7.43262,11.64233h-1.29126h-6.84473c-6.6505,0 -13.31486,-1.38203 -19.8938,-3.63232h-0.0105c-2.94002,-1.00391 -6.59704,-1.74268 -10.88647,-1.74268h-5.375v64.5v32.25h139.75v-32.17651c0.17528,-13.07645 -2.03441,-22.93207 -8.73437,-29.39453c-6.69996,-6.46246 -16.4626,-8.30396 -28.89062,-8.30396c-14.62901,0 -20.38094,-5.45992 -23.59961,-10.82349c-3.21867,-5.36356 -3.27539,-10.67651 -3.27539,-10.67651v-16.125zM80.6145,44.19678v4.17822c0,0 0.01385,7.40399 4.22021,15.09619l-10.50854,10.61352l7.63208,7.56909l9.72119,-9.82617c1.35249,1.16001 2.84426,2.25748 4.51416,3.2544l-5.75293,11.39038l9.59521,4.8396l6.12036,-12.12524c3.57951,0.90844 7.58688,1.43823 12.08325,1.43823c11.31335,0 17.85351,1.84467 21.42651,5.29102c3.573,3.44635 5.61698,9.7222 5.45898,21.5105l-0.0105,0.04199v0.03149h-118.25v-21.5h16.1355c0,0 6.49704,0.07412 13.15405,-3.2544c6.65701,-3.32851 13.72095,-11.07894 13.72095,-23.6206v-5.3855c0,-4.48486 1.29899,-6.33164 3.86328,-8.01001c1.43929,-0.94204 4.44758,-1.0608 6.87622,-1.53272zM26.8645,54.58984c0.60679,0.15082 1.51205,0.14629 2.03662,0.32544c7.40681,2.53344 15.2484,4.20972 23.37915,4.20972h6.84473c0,8.95834 -3.68607,11.9579 -7.77905,14.0044c-4.09299,2.04649 -8.34595,2.1206 -8.34595,2.1206h-16.1355zM26.8645,118.25h118.25v10.75h-118.25z"></path></g></g></svg>
+                                <span class="ml-2">{{pokemon.stats[5].base_stat}}</span>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid mt-auto">
+                    <div class="row">
+                        <div class="col-12 col-lg-12">
+                            <div class="row">
+                                <button (click)="adicionarAoCarrinho()" [disabled]="!pokemon" class="btn btn-block btn-lg btn-primary justify-content-center d-flex align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                        width="25" height="25"
+                                        viewBox="0 0 172 172"
+                                        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M26.875,37.625c-2.96045,0 -5.375,2.41455 -5.375,5.375c0,2.96045 2.41455,5.375 5.375,5.375h11.92578l14.10938,56.4375c1.19678,4.78711 5.47998,8.0625 10.41406,8.0625h61.64453c4.8501,0 8.96533,-3.2124 10.24609,-7.89453l13.94141,-51.23047h-90.03125l2.6875,10.75h73.40234l-10.24609,37.625h-61.64453l-14.10937,-56.4375c-1.19678,-4.78711 -5.47998,-8.0625 -10.41406,-8.0625zM118.25,112.875c-8.83935,0 -16.125,7.28565 -16.125,16.125c0,8.83935 7.28565,16.125 16.125,16.125c8.83935,0 16.125,-7.28565 16.125,-16.125c0,-8.83935 -7.28565,-16.125 -16.125,-16.125zM69.875,112.875c-8.83935,0 -16.125,7.28565 -16.125,16.125c0,8.83935 7.28565,16.125 16.125,16.125c8.83935,0 16.125,-7.28565 16.125,-16.125c0,-8.83935 -7.28565,-16.125 -16.125,-16.125zM69.875,123.625c3.02344,0 5.375,2.35156 5.375,5.375c0,3.02344 -2.35156,5.375 -5.375,5.375c-3.02344,0 -5.375,-2.35156 -5.375,-5.375c0,-3.02344 2.35156,-5.375 5.375,-5.375zM118.25,123.625c3.02344,0 5.375,2.35156 5.375,5.375c0,3.02344 -2.35156,5.375 -5.375,5.375c-3.02344,0 -5.375,-2.35156 -5.375,-5.375c0,-3.02344 2.35156,-5.375 5.375,-5.375z"></path></g></g></svg>
+                                <span class="ml-2">Comprar</span></button>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  

@@ -1,0 +1,29 @@
+<div class="d-flex flex-column justify-content-between h-100" >
+    <div class="d-flex flex-column justify-content-between h-100" >
+        
+          
+            <div class="mt-3 mt-md-0 scroll " style="overflow: auto; max-height: 68vh;">
+                <app-card-historico [compra]="compra"  *ngFor="let compra of compras "></app-card-historico>
+            </div>
+
+          
+      
+          <div class="d-flex flex-column">
+            <div class="d-flex">
+      
+              <button (click)="closed.emit(true)"  class="btn btn-secondary d-flex align-items-center justify-content-center mr-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                  width="25" height="25"
+                  viewBox="0 0 172 172"
+                  style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M46.86328,39.13672l-7.72656,7.72656l39.13672,39.13672l-39.13672,39.13672l7.72656,7.72656l39.13672,-39.13672l39.13672,39.13672l7.72656,-7.72656l-39.13672,-39.13672l39.13672,-39.13672l-7.72656,-7.72656l-39.13672,39.13672z"></path></g></g></svg>
+                  <span class="ml-2">Fechar</span></button>
+             
+            </div>
+           
+      
+      
+          </div>
+      
+      </div>
+  
+</div>
