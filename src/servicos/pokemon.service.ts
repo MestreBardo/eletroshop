@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class PokemonService {
-  tiposBuscaMemoria = ['quentes', 'doForno'];
+  tiposBuscaMemoria = ['chocantes', 'novos'];
   constructor(private http: HttpClient, private storageService: StorageService) {
   }
 
@@ -19,7 +19,7 @@ export class PokemonService {
         resolve(pokemons);
       });
     } else {
-      return this.http.get('https://pokeapi.co/api/v2/type/fire')
+      return this.http.get('https://pokeapi.co/api/v2/type/electric')
       .pipe(take(1), map( (x: any) => x.pokemon.map( pokemon =>
         { return {
           url: pokemon.pokemon.url, nome: pokemon.pokemon.name};

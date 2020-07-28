@@ -6,36 +6,36 @@ export class DefinicoesIniciais {
     };
     static quentes = [
         {
-          url: 'https://pokeapi.co/api/v2/pokemon/6/',
-          nome: 'charizard',
-          extraInfo: 'QUENTE'
+          url: 'https://pokeapi.co/api/v2/pokemon/pikachu/',
+          nome: 'pikachu',
+          extraInfo: 'CHOCANTE'
         },
         {
-          url: 'https://pokeapi.co/api/v2/pokemon/59/',
-          nome: 'arcanine',
-          extraInfo: 'QUENTE'
+          url: 'https://pokeapi.co/api/v2/pokemon/voltorb/',
+          nome: 'voltorb',
+          extraInfo: 'CHOCANTE'
         },
         {
-          url: 'https://pokeapi.co/api/v2/pokemon/146/',
-          nome: 'moltres',
-          extraInfo: 'QUENTE'
+          url: 'https://pokeapi.co/api/v2/pokemon/elekid/',
+          nome: 'elekid',
+          extraInfo: 'CHOCANTE'
         }
     ];
     static doForno = [
       {
-        url: 'https://pokeapi.co/api/v2/pokemon/322/',
-        nome: 'numel',
-        extraInfo: 'DO FORNO'
+        url: 'https://pokeapi.co/api/v2/pokemon/helioptile/',
+        nome: 'Helioptile',
+        extraInfo: 'NOVO'
       },
       {
-        url: 'https://pokeapi.co/api/v2/pokemon/636/',
-        nome: 'larvesta',
-        extraInfo: 'DO FORNO'
+        url: 'https://pokeapi.co/api/v2/pokemon/togedemaru/',
+        nome: 'Togedemaru',
+        extraInfo: 'NOVO'
       },
       {
-        url: 'https://pokeapi.co/api/v2/pokemon/37/',
-        nome: 'vulpix',
-        extraInfo: 'DO FORNO'
+        url: 'https://pokeapi.co/api/v2/pokemon/pichu/',
+        nome: 'Pichu',
+        extraInfo: 'NOVO'
       }
     ];
     static cartoesIniciais = [

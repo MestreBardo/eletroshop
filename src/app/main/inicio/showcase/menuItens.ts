@@ -5,11 +5,11 @@ export class MenuItens {
             ativo: true,
         },
         {
-            nomeMenu: 'do Forno',
+            nomeMenu: 'novos',
             ativo: false
         },
         {
-            nomeMenu: 'quentes',
+            nomeMenu: 'chocantes',
             ativo: false
         }
     ];

@@ -1,4 +1,4 @@
-<div class="one-edge-shadow bg-white shadow-sm mb-1" style="overflow: hidden;">
+<div class="one-edge-shadow bg-white shadow-sm mb-1 rounded" style="overflow: hidden;">
 
     <div *ngIf="pokemon" class="d-flex align-items-center">
         <img *ngIf="pokemon.imagemCarrinho" class="img-fluid" [src]="pokemon.imagemCarrinho" alt="">
@@ -14,25 +14,25 @@
                 <p class="m-0 text-primary mt-1 w-100">R$ {{pokemon.valor}},00</p>
                 <div class="d-flex ml-auto  border border-secondary border-top-0 border-left-0 border-right-0 ml-auto">
                     <button [disabled]="quantidadeAtual < 2" (click)="mudaQuantidade('negativo')" class="btn text-primary d-flex align-items-center bg-white p-2 "> 
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                            width="15" height="15"
-                            viewBox="0 0 172 172"
-                            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f36f21"><path d="M26.875,80.625v10.75h118.25v-10.75z"></path></g></g></svg> </button>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="18" height="18"
+                        viewBox="0 0 172 172"
+                        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#333333"><path d="M136.16667,143.33333h-100.33333c-4.3,0 -7.16667,-2.86667 -7.16667,-7.16667v-100.33333c0,-4.3 2.86667,-7.16667 7.16667,-7.16667h100.33333c4.3,0 7.16667,2.86667 7.16667,7.16667v100.33333c0,4.3 -2.86667,7.16667 -7.16667,7.16667z" opacity="0.3"></path><path d="M136.16667,150.5h-100.33333c-7.88333,0 -14.33333,-6.45 -14.33333,-14.33333v-100.33333c0,-7.88333 6.45,-14.33333 14.33333,-14.33333h100.33333c7.88333,0 14.33333,6.45 14.33333,14.33333v100.33333c0,7.88333 -6.45,14.33333 -14.33333,14.33333zM136.16667,136.16667v7.16667v-7.16667zM35.83333,35.83333v100.33333h100.33333v-100.33333z"></path><path d="M50.16667,78.83333h71.66667v14.33333h-71.66667z"></path></g></g></svg></button>
                     <input (change)="verificaMudanca($event)" (input)="mudarQuantidade($event)" [(ngModel)]="quantidadeAtual" type="number" class="form-control text-center form-control-sm w-50 ">
                     <button (click)="mudaQuantidade('positivo')" class="btn text-primary bg-white p-2 d-flex align-items-center"> 
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                            width="15" height="15"
-                            viewBox="0 0 172 172"
-                            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f36f21"><path d="M80.625,26.875v53.75h-53.75v10.75h53.75v53.75h10.75v-53.75h53.75v-10.75h-53.75v-53.75z"></path></g></g></svg> </button>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        width="18" height="18"
+                        viewBox="0 0 172 172"
+                        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#333333"><path d="M136.16667,143.33333h-100.33333c-4.3,0 -7.16667,-2.86667 -7.16667,-7.16667v-100.33333c0,-4.3 2.86667,-7.16667 7.16667,-7.16667h100.33333c4.3,0 7.16667,2.86667 7.16667,7.16667v100.33333c0,4.3 -2.86667,7.16667 -7.16667,7.16667z" opacity="0.3"></path><path d="M136.16667,150.5h-100.33333c-7.88333,0 -14.33333,-6.45 -14.33333,-14.33333v-100.33333c0,-7.88333 6.45,-14.33333 14.33333,-14.33333h100.33333c7.88333,0 14.33333,6.45 14.33333,14.33333v100.33333c0,7.88333 -6.45,14.33333 -14.33333,14.33333zM136.16667,136.16667v7.16667v-7.16667zM35.83333,35.83333v100.33333h100.33333v-100.33333z"></path><path d="M78.83333,50.16667h14.33333v71.66667h-14.33333z"></path><path d="M50.16667,78.83333h71.66667v14.33333h-71.66667z"></path></g></g></svg></button>
                 </div>
             </div>
             
         </div>
         <div (click)="deletaPokemon()" class="d-flex flex-column ml-auto p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                width="32" height="32"
-                viewBox="0 0 172 172"
-                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#f36f21"><path d="M80.625,21.5c-2.81347,0 -5.68994,0.98682 -7.72656,3.02344c-2.03662,2.03662 -3.02344,4.91309 -3.02344,7.72656v5.375h-32.25v10.75h5.375v86c0,8.83935 7.28565,16.125 16.125,16.125h64.5c8.83935,0 16.125,-7.28565 16.125,-16.125v-86h5.375v-10.75h-32.25v-5.375c0,-2.81347 -0.98682,-5.68994 -3.02344,-7.72656c-2.03662,-2.03662 -4.91308,-3.02344 -7.72656,-3.02344zM80.625,32.25h21.5v5.375h-21.5zM53.75,48.375h75.25v86c0,2.98145 -2.39355,5.375 -5.375,5.375h-64.5c-2.98144,0 -5.375,-2.39355 -5.375,-5.375zM64.5,64.5v59.125h10.75v-59.125zM86,64.5v59.125h10.75v-59.125zM107.5,64.5v59.125h10.75v-59.125z"></path></g></g></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="28" height="28"
+            viewBox="0 0 172 172"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#333333"><path d="M43,28.66667h86v121.83333h-86z" opacity="0.3"></path><path d="M78.83333,129h-14.33333v-78.83333h14.33333zM107.5,129h-14.33333v-78.83333h14.33333zM28.66667,21.5h114.66667v14.33333h-114.66667z"></path><path d="M121.83333,35.83333l-21.5,-21.5h-28.66667l-21.5,21.5z"></path><path d="M121.83333,157.66667h-71.66667c-7.88333,0 -14.33333,-6.45 -14.33333,-14.33333v-121.83333h100.33333v121.83333c0,7.88333 -6.45,14.33333 -14.33333,14.33333zM50.16667,35.83333v107.5h71.66667v-107.5z"></path></g></g></svg>
         </div>
     </div>
     

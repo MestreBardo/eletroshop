@@ -1,14 +1,10 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans&family=MuseoModerno&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Nova+Round&family=Varela+Round&display=swap');
 h1, h2, h3, h4, h5{
-  font-family: 'Bebas Neue', cursive;
-  white-space: nowrap
+  font-family: 'Nova Round', cursive;
 }
 p, span, small {
-  font-family: 'MuseoModerno', cursive;
-  white-space: nowrap
+  font-family: 'Dosis', sans-serif;
 }
 
 .pointer {
@@ -16,28 +12,7 @@ p, span, small {
 }
 
 
-//Modificação do botão original do Bootstrap para adequação do projeto.
-.btn-primary {
-  box-shadow: 0 3px #cf4e04;
-  border: none !important;
-  backface-visibility: hidden;
-}
-.btn-primary:active{
-  transform: translateY(2px);
-  backface-visibility: hidden;
-  box-shadow: 0 1px #8f3502;
-}
 
-.btn-secondary {
-  box-shadow: 0 3px #7c7c7c;
-  border: none !important;
-  backface-visibility: hidden;
-}
-.btn-secondary:active{
-  transform: translateY(2px);
-  backface-visibility: hidden;
-  box-shadow: 0 1px #727272;
-}
 
 //Overlay para foco em determinado objeto.
 .overlay {

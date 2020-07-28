@@ -42,7 +42,6 @@ export class ShowcaseComponent implements OnInit {
         .buscarPokemons(aba, 1)
         .then((pokemons: any) => {
           this.pokemonsSearched = pokemons;
-          console.log(this.pokemonsSearched);
         });
       this.menuItens[indexAba].ativo = true;
       this.abaAtual = aba;
